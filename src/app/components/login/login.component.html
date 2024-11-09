@@ -1,16 +1,16 @@
 <div class="login-container">
     <h3 class="ai-text-container"><span class="ai-text">Conecte-se</span></h3>
-    <form>
+    <form [formGroup]="loginForm">
         <div class="input-container">
-            <label>Usuário</label>
-            <input>
+            <label for="user-input">Usuário</label>
+            <input id="userInput" formControlName="user" type="email">
         </div>
 
         <div class="input-container">
-            <label>Senha</label>
-            <input>
+            <label for="password-input">Senha</label>
+            <input id="password-input" formControlName="password" type="password">
         </div>
 
-        <button class="gradient-button">Entrar</button>
+        <button class="gradient-button" [disabled]="!loginForm.valid">Entrar</button>
     </form>
 </div>
